@@ -1,0 +1,12 @@
+<div>
+    Name from parent component is: {{parentName}}
+    <h2>Student Names are: </h2>
+    <ul>
+        <li *ngFor="let std of stdParentNames">{{std}}</li>
+    </ul>
+    <br>
+    Child Message: {{msg}}
+    <br>
+    <input type="text" #ageRef><br>
+    <input type="submit" value="Pass Age" (click)="passValue(ageRef.value)">
+</div>

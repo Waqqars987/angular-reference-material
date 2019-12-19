@@ -1,0 +1,30 @@
+<div style="background-color:thistle">
+    <h2>Template Driven Form - Login Page</h2>
+    <form #loginRef="ngForm" (submit)="checkUser(loginRef.value)" novalidate>
+        <label>Username</label>
+        <input type="text" name="user" ngModel required minlength="3" #userRef="ngModel">
+        <div *ngIf="userRef.invalid && (userRef.touched||userRef.dirty)">
+            <span *ngIf="userRef.errors.required" style="color: red">
+                Username is required
+            </span>
+            <span *ngIf="userRef.errors.minlength" style="color: red">
+                Minimum length required is 3
+            </span>
+        </div>
+        <br>
+        <label>Password</label>
+        <input type="password" name="pass" ngModel required pattern="\d{3}" #passwordRef="ngModel">
+        <div *ngIf="passwordRef.invalid && (passwordRef.touched||passwordRef.dirty)">
+            <span *ngIf="passwordRef.errors.required" style="color: red">
+                Password is required
+            </span>
+            <span *ngIf="passwordRef.errors.pattern" style="color: red">
+                Minimum digits required is 3
+            </span>
+        </div>
+        <br>
+        <input type="submit" value="Submit" [disabled]="loginRef.invalid">
+        <input type="reset" value="Reset">
+    </form>
+    {{msg}}
+</div>

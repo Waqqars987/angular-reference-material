@@ -1,0 +1,15 @@
+<h2>Store Employee Info</h2>
+<form [formGroup]="empRef" (submit)="storeEmpInfo()">
+    <label>Name</label>
+    <input type="text" formControlName="name">
+    <br>
+    <label>Salary</label>
+    <input type="text" formControlName="salary">
+    <br>
+    <label>Age</label>
+    <input type="text" formControlName="age">
+    <br>
+    <input type="submit" value="Store Record">
+    <div *ngIf="result">Your ID is: {{result}}</div>
+    <div *ngIf="error">Error: {{error}}</div>
+</form>

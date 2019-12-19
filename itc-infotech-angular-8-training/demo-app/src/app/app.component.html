@@ -1,0 +1,27 @@
+<app-header></app-header>
+<hr>
+<!-- <app-main></app-main> -->
+<!-- <app-data-binding></app-data-binding> -->
+<!-- <app-directive-demo></app-directive-demo> -->
+<!-- <app-td-form></app-td-form>
+  <app-md-form></app-md-form> -->
+<!-- <app-service-component></app-service-component> -->
+<!-- <app-employee-retrieve></app-employee-retrieve> -->
+<!-- <app-employee-store></app-employee-store> -->
+<div>
+  <h2>Parent Component</h2>
+  Name is {{name}}
+  <br>
+  <div>
+    Student Name: <input type="text" #nameRef><br>
+    <input type="button" value="Add Name" (click)="addName(nameRef.value)"><br>
+    <span *ngIf="stdCount">Student Count is : {{stdCount}}</span>
+  </div>
+  Child Age is: {{childAge || 'Not received yet'}}
+  <hr>
+  <app-child1 [parentName]="name" [stdParentNames]="stdName" (ageOutput)="childAge=$event"></app-child1>
+  <br>
+  Message from Child Component is: {{childMsg}}
+</div>
+<hr>
+<app-footer></app-footer>

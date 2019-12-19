@@ -1,0 +1,29 @@
+<input type="text" #idRef>
+<br>
+<input type="button" value="Check By Id" (click)="checkById(idRef.value)">
+<div *ngIf="fakeRef">
+    <p>Id: {{fakeRef.id}}</p>
+    <p>Name: {{fakeRef.employee_name}}</p>
+    <p>Salary: {{fakeRef.employee_salary}}</p>
+    <p>Age: {{fakeRef.employee_age}}</p>
+</div>
+<div *ngIf="errorMsg">
+    <p>{{errorMsg}}</p>
+</div>
+<!-- <input type="button" value="Load Data" (click)="loadData()"> -->
+<div *ngIf="fakeInfo.length>0">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor="let ff of fakeInfo">
+            <td>{{ff.id}}</td>
+            <td>{{ff.employee_name}}</td>
+            <td>{{ff.employee_salary}}</td>
+            <td>{{ff.employee_age}}</td>
+        </tr>
+    </table>
+</div>

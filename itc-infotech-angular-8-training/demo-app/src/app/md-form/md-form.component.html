@@ -1,0 +1,28 @@
+<div style="background-color: turquoise;">
+    <h2>Model Driven Form - Login Page</h2>
+    <form [formGroup]="loginRef" (submit)="checkUser()">
+        <label>Username</label>
+        <input type="text" formControlName="userName">
+        <div *ngIf="loginRef.controls.userName.invalid && 
+        (loginRef.controls.userName.touched || loginRef.controls.userName.dirty)">
+            <span *ngIf="loginRef.controls.userName.errors.required" style="color:tomato">
+                Username is required
+            </span>
+            <span *ngIf="loginRef.controls.userName.errors.minlength" style="color:tomato">
+                Minimum 3 characters is required
+            </span>
+        </div>
+        <br>
+        <label>Password</label>
+        <input type="password" formControlName="pass">
+        <div *ngIf="loginRef.controls.pass.invalid && 
+        (loginRef.controls.pass.touched || loginRef.controls.pass.dirty)">
+            <span *ngIf="loginRef.controls.pass.errors.required" style="color:tomato">
+                Password is required
+            </span>
+        </div>
+        <br>
+        <!-- <input type="submit" value="Submit" [disabled]="loginRef.invalid"> -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
