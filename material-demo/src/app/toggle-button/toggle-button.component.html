@@ -1,0 +1,24 @@
+<div class="mat-display-1">Button Toggle</div>
+
+<div>
+    <mat-button-toggle checked disableRipple disabled #toggleBtn>Toggle</mat-button-toggle>
+    {{toggleBtn.checked}}
+</div>
+
+<div>
+    <mat-button-toggle-group #toggleGroupRadio="matButtonToggleGroup">
+        <mat-button-toggle value="angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="react">React</mat-button-toggle>
+        <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroupRadio.value}}
+</div>
+
+<div>
+    <mat-button-toggle-group #toggleGroupCheckbox="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="react">React</mat-button-toggle>
+        <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroupCheckbox.value}}
+</div>

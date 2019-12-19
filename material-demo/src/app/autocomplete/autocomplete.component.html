@@ -1,0 +1,29 @@
+<div class="mat-display-1">Autocomplete</div>
+
+<form>
+
+    <!-- <div class="mat-caption">On Array</div>
+    <div>
+        <mat-form-field>
+            <input type="text" matInput [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div> -->
+
+    <div class="mat-caption">On Object</div>
+    <div>
+        <mat-form-field>
+            <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+</form>
